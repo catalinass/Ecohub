@@ -15,24 +15,12 @@
                     <div class="column is-8 user-box">
                         <!-- <span class="user-label">Usuario:</span> -->
                         <mat-form-field>
-                            <input matInput placeholder="Usuario">
-                            <mat-hint>Poné tu nombre de usuario</mat-hint>
+                            <input matInput placeholder="Cédula">
+                            <mat-hint>Poné tu número de cédula</mat-hint>
                         </mat-form-field>
                     </div>
                 </div>
-                <div class="columns is-centered">
-                    <div class="column is-8 password-box">
-                        <!-- <span class="password-label">Contraseña:</span> -->
-                        <mat-form-field>
-                            <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'">
-                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                                [attr.aria-pressed]="hide">
-                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                            </button>
-                            <mat-hint>Poné tu contraseña</mat-hint>
-                        </mat-form-field>
-                    </div>
-                </div>
+              
                 <div class="columns is-centered">
                     <div class="column is-4 user-box">
                         <button mat-raised-button color="primary" (click)="login()"> Ingresar
@@ -41,9 +29,9 @@
                 </div>
                 <div class="columns is-centered">
                     <div class="column has-text-centered register">
-                        <small>Nuevo a EcoHub?</small>
-                        <!-- Tildes -->
-                        <span (click)="openSignUp()">Registrate aqui y crea tu cuenta</span>
+                        <small>Nuevo en EcoHub?</small>
+                       
+                        <span (click)="openSignUp()">Regístrate aquí y creá tu cuenta</span>
                     </div>
                 </div>
             </div>
@@ -63,7 +51,7 @@
                             <mat-label>Nombre</mat-label>
                             <input matInput placeholder="John" [formControl]="nameControl">
                             <mat-hint>Poné tu nombre</mat-hint>
-                            <mat-error *ngIf="nameControl.invalid">Porfavor ingresa tu nombre</mat-error>
+                            <mat-error *ngIf="nameControl.invalid">Por favor ingresá tu nombre</mat-error>
                         </mat-form-field>
                     </div>
                 </div>
@@ -73,17 +61,17 @@
                             <mat-label>Apellidos</mat-label>
                             <input matInput placeholder="Doe" [formControl]="lastNameControl">
                             <mat-hint>Poné tus apellidos</mat-hint>
-                            <mat-error *ngIf="lastNameControl.invalid">Porfavor ingresa tus apellidos</mat-error>
+                            <mat-error *ngIf="lastNameControl.invalid">Por favor ingresá tus apellidos</mat-error>
                         </mat-form-field>
                     </div>
                 </div>
                 <div class="columns is-centered">
                     <div class="column is-8 user-box">
                         <mat-form-field appearance="outline">
-                            <mat-label>Cedula</mat-label>
+                            <mat-label>Cédula</mat-label>
                             <input matInput placeholder="1234567890" [formControl]="idControl">
-                            <mat-hint>Digita tu cedula</mat-hint>
-                            <mat-error *ngIf="idControl.invalid">Porfavor ingresa tu cedula</mat-error>
+                            <mat-hint>Digita tu cédula</mat-hint>
+                            <mat-error *ngIf="idControl.invalid">Por favor ingresá tu cedula</mat-error>
                         </mat-form-field>
                     </div>
                 </div>
@@ -92,56 +80,16 @@
                         <mat-form-field appearance="outline">
                             <mat-label>Correo</mat-label>
                             <input matInput placeholder="jdoe@email.com" [formControl]="emailControl">
-                            <mat-hint>Escribi tu correo</mat-hint>
+                            <mat-hint>Escribí tu correo</mat-hint>
                             <mat-error *ngIf="emailControl.invalid">{{getEmailErrorMessage()}}</mat-error>
                         </mat-form-field>
                     </div>
                 </div>
             </div>
-            <div class="column acc-cont">
-                <h2>Datos de cuenta:</h2>
-                <div class="columns is-centered">
-                    <div class="column is-8 user-box">
-                        <mat-form-field appearance="outline">
-                            <mat-label>Nombre de usuario</mat-label>
-                            <input matInput placeholder="jdoe" [formControl]="usernameControl">
-                            <mat-hint>Escoge tu nombre de usuario</mat-hint>
-                            <mat-error *ngIf="usernameControl.invalid">Necesitas un nombre de usuario</mat-error>
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="columns is-centered">
-                    <div class="column is-8 password-box">
-                        <mat-form-field appearance="outline">
-                            <mat-label>Contraseña</mat-label>
-                            <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" (focus)="isWriting = true" 
-                                (focusout)="comparePasswords();isWriting = false" [formControl]="passwordControl">
-                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                                [attr.aria-pressed]="hide">
-                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                            </button>
-                            <mat-hint>Crea tu contraseña</mat-hint>
-                            <mat-error *ngIf="passwordControl.invalid">Porfavor ingresa una contraseña</mat-error>
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="columns is-centered">
-                    <div class="column is-8 password-box">
-                        <mat-form-field appearance="outline">
-                            <mat-label>Confirma tu contraseña</mat-label>
-                            <input matInput [formControl]="confPassControl" placeholder="Contraseña"
-                                (focus)="isWriting = true" (focusout)="isWriting = false"
-                                [type]="hide ? 'password' : 'text'" (focusout)="comparePasswords()">
-                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                                [attr.aria-pressed]="hide">
-                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                            </button>
-                            <mat-hint>Debe ser igual</mat-hint>
-                            <mat-error *ngIf="confPassControl.invalid">Las contraseñas son diferentes!</mat-error>
-                        </mat-form-field>
-                    </div>
-                </div>
-            </div>
+            
+                    <div class="column logo-cont">
+                            <span class="logo-test">EcoHub</span>
+                        </div>
         </div>
         <div class="columns is-centered" *ngIf="isNewMember">
             <div class="column registerAccount is-7 has-text-centered">

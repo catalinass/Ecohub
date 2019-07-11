@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   hide = true;
   isNewMember = false;
   isWriting = false;
+  
 
   // Spinner settings
   color = 'primary';
@@ -34,10 +35,7 @@ export class LoginComponent implements OnInit {
   lastNameControl = new FormControl('', Validators.required);
   idControl = new FormControl('', Validators.required);
   emailControl = new FormControl('', [Validators.required, Validators.email]);
-  usernameControl = new FormControl('', Validators.required);
-  passwordControl = new FormControl('', Validators.required);
-  confPassControl = new FormControl('', Validators.required);
-
+  
   constructor(private router: Router, private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -45,10 +43,7 @@ export class LoginComponent implements OnInit {
       name: this.nameControl,
       lastName: this.lastNameControl,
       id: this.idControl,
-      email: this.emailControl,
-      username: this.usernameControl,
-      password: this.passwordControl,
-      confPass: this.confPassControl
+      email: this.emailControl
     });
   }
 
@@ -61,9 +56,7 @@ export class LoginComponent implements OnInit {
       name: this.nameControl.value,
       lastName: this.lastNameControl.value,
       email: this.emailControl.value,
-      id: this.idControl.value,
-      username: this.usernameControl.value,
-      password: this.passwordControl.value
+      id: this.idControl.value
     };
     this.displayProgressSpinner = true;
     setTimeout(() => {
@@ -83,19 +76,12 @@ export class LoginComponent implements OnInit {
     this.registerFormGroup.reset();
   }
 
-  comparePasswords() {
-    if (this.confPassControl.value !== '') {
-      if (this.passwordControl.value === this.confPassControl.value) {
-        this.confPassControl.setErrors(null);
-      } else {
-        this.confPassControl.setErrors({ invalid: true });
-      }
-    }
-  }
+ 
 
   getEmailErrorMessage() {
     return this.emailControl.hasError('required') ? 'Porfavor ingresa un correo' :
       this.emailControl.hasError('email') ? 'Email invalido' :
+ 
         '';
   }
 
