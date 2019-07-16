@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\server.js",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\home",
+    "\\src\\app\\login",
+    "\\src\\app\\overlay",
+    "\\src\\app\\progress-spinner",
+    "\\src\\environments"
+  ],
+  "SelectedNode": "\\src\\app\\login\\home.component.html",
+  "PreviewInSolutionExplorer": false
+}

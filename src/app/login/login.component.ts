@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
   idControl = new FormControl('', Validators.required);
   emailControl = new FormControl('', [Validators.required, Validators.email]);
   
-  constructor(private router: Router, private _formBuilder: FormBuilder) { }
+  constructor(private router: Router, private _formBuilder: FormBuilder ) { }
 
   ngOnInit() {
     this.registerFormGroup = this._formBuilder.group({
@@ -50,6 +50,9 @@ export class LoginComponent implements OnInit {
   login() {
     this.router.navigate(['/home']);
     
+    
+
+
   }
 
   register() {
