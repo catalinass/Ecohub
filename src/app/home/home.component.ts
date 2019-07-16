@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AssetsService } from '../services/assets.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private assetsService: AssetsService) { }
 
   ngOnInit() {
   }
 
+  start(){
+   this.assetsService.getWeight().subscribe(
+     response => {
+     console.log(response)
+     }
+   )
+
+  }
 }

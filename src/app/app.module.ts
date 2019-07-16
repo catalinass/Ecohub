@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
 
 // App Components
 import { AppComponent } from './app.component';
@@ -19,6 +20,9 @@ import { MatInputModule } from '@angular/material/input';
 import { ProgressSpinnerModule, ProgressSpinnerComponent } from './progress-spinner/progress-spinner.module';
 import { AppOverlayModule } from './overlay/overlay.module';
 import { HomeComponent } from './home/home.component';
+import { AssetsService } from './services/assets.service';
+
+
 
 @NgModule({
   declarations: [
@@ -41,10 +45,12 @@ import { HomeComponent } from './home/home.component';
     MatInputModule,
     //MatProgressSpinnerModule,
     AppOverlayModule,
-    ProgressSpinnerModule
-  ],
+    ProgressSpinnerModule,
+    HttpClientModule
+      ],
+
   entryComponents: [AppComponent, ProgressSpinnerComponent],
-  providers: [],
+  providers: [HttpClient, AssetsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
