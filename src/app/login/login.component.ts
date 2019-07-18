@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AssetsService } from '../services/assets.service';
 import { FormControl, FormGroup, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -35,6 +36,7 @@ export class LoginComponent implements OnInit {
   lastNameControl = new FormControl('', Validators.required);
   idControl = new FormControl('', Validators.required);
   emailControl = new FormControl('', [Validators.required, Validators.email]);
+  assetsService: any;                                                              //Fix automatico
   
   constructor(private router: Router, private _formBuilder: FormBuilder ) { }
 
@@ -48,10 +50,13 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    //this.assetsService.initialize().subscribe(
+      //response => {
+      //console.log(response)
+      //}
+    //)
     this.router.navigate(['/home']);
     
-    
-
 
   }
 
@@ -88,6 +93,16 @@ export class LoginComponent implements OnInit {
  
         '';
   }
+
+
+  start(){
+    this.assetsService.initialize().subscribe(
+      response => {
+      console.log(response)
+      }
+    )
+ 
+   }
 
 }
 

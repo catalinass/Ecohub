@@ -15,7 +15,14 @@ export class AssetsService {
 
   public getWeight(){
     const url = raspberrypiUri + '/get_w' ;
-    return this.http.get(url, { withCredentials: true });
+    return this.http.get(url, { withCredentials: false });
 
    }
+
+   public initialize(){
+    const url1 = raspberrypiUri + '/initialize' ;
+    return this.http.get(url1, { withCredentials: false });
+
+   }
+
 }
