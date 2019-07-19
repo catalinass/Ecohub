@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import {AssetsService } from '../services/assets.service';
 
 export function ValidatePasswords(control: AbstractControl) {
   if (control.value === '') {
@@ -36,7 +37,7 @@ export class LoginComponent implements OnInit {
   idControl = new FormControl('', Validators.required);
   emailControl = new FormControl('', [Validators.required, Validators.email]);
   
-  constructor(private router: Router, private _formBuilder: FormBuilder ) { }
+  constructor(private router: Router, private _formBuilder: FormBuilder, private assetsService: AssetsService) { }
 
   ngOnInit() {
     this.registerFormGroup = this._formBuilder.group({
@@ -49,7 +50,11 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.router.navigate(['/home']);
-    
+    this.assetsService.initialize().subscribe(
+      response => {
+      console.log(response)
+      }
+    )
     
 
 
