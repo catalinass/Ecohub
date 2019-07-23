@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AssetsService } from '../services/assets.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import {AssetsService } from '../services/assets.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private assetsService: AssetsService) { }
+  constructor(private router: Router, private assetsService: AssetsService) { }
 
   ngOnInit() {
   }
@@ -21,4 +22,10 @@ export class HomeComponent implements OnInit {
    )
 
   }
+
+  close(){
+     this.router.navigate(['/login']);
+  }
+  
+
 }

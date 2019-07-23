@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {AssetsService } from '../services/assets.service';
 import { FormControl, FormGroup, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import {AssetsService } from '../services/assets.service';
+
 
 export function ValidatePasswords(control: AbstractControl) {
   if (control.value === '') {
@@ -49,6 +50,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+   
     this.router.navigate(['/home']);
     this.assetsService.initialize().subscribe(
       response => {
@@ -93,6 +95,16 @@ export class LoginComponent implements OnInit {
  
         '';
   }
+
+
+  start(){
+    this.assetsService.initialize().subscribe(
+      response => {
+      console.log(response)
+      }
+    )
+ 
+   }
 
 }
 
