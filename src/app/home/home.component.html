@@ -1,48 +1,60 @@
 <section>
-  <div class="lesson-viewer-wrapper">
-      <!-- Header -->
-      <div class="columns is-centered title-login">
-          <div class="column has-text-centered">
-              <h1>¡Gracias por usar EcoHub!</h1>
-              <small> Seguí reciclando.</small>
-          </div>
-      </div>
+    <div class="lesson-viewer-wrapper">
+        <!-- Header -->
+        <div class="columns is-centered title-login">
+            <div class="column has-text-centered">
+                <h1>¡Gracias por usar EcoHub!</h1>
+                <small> Seguí reciclando.</small>
+            </div>
+        </div>
 
-      <div class="columns" >
-          <div class="column">
-              <div class="columns is-centered">
-                  <div class="column">
-                      
-                      
-                  </div>
-              </div>
-            
-              <div class="columns is-centered" >
-                <div class="column registerAccount is-7 has-text-centered">
-                    <button mat-raised-button color="accent" (click)="start()"> Iniciar
-                    </button>
-                    <button mat-raised-button color="accent" (click)="close()"> Salir
-                    </button>
-                    
+        <div class="columns">
+            <div class="column">
+                <div class="columns is-centered">
+                    <div class="column">
+
+
+                    </div>
                 </div>
+
+                <div class="columns is-centered">
+                    <div class="column registerAccount is-7 has-text-centered">
+                        <button mat-raised-button color="accent" (click)="start()"> Iniciar
+                        </button>
+                        <button mat-raised-button color="accent" (click)="close()"> Salir
+                        </button>
+
+                    </div>
+                </div>
+
+
             </div>
 
-              
-          </div>
-         
-      </div>
+        </div>
+        <div>
+            <fieldset ngModelGroup="data">
 
-  
-      <!-- Footer -->
-      <div class="columns is-centered footer-login">
+                <div>
+                    <label>Peso</label>
+                    <input type="text" name="peso" [(ngModel)]="model.peso" required #peso="ngModel">
+                </div>
+                <div>
+                    <label>Eco</label>
+                    <input type="text" name="eco" [(ngModel)]="model.eco" required #eco="ngModel">
+                </div>
+            </fieldset>
+        </div>
 
-          <div class="column has-text-centered">
-              <small>Proyecto desarrollado por Catalina Sanchez, Valeska Mora y Alejandra Soto en Intel Innovation
-                  Center.</small>
-          </div>
-      </div>
-      <app-progress-spinner class="example-margin" [color]="color" [mode]="mode" [value]="value"
-          [backdropEnabled]="true" [positionGloballyCenter]="true" [displayProgressSpinner]="displayProgressSpinner">
-      </app-progress-spinner>
-  </div>
+        <!-- Footer -->
+        <div class="columns is-centered footer-login">
+
+            <div class="column has-text-centered">
+                <small>Proyecto desarrollado por Catalina Sanchez, Valeska Mora y Alejandra Soto en Intel Innovation
+                    Center.</small>
+            </div>
+        </div>
+        <app-progress-spinner class="example-margin" [color]="color" [mode]="mode" [value]="value"
+            [backdropEnabled]="true" [positionGloballyCenter]="true" [displayProgressSpinner]="displayProgressSpinner">
+        </app-progress-spinner>
+    </div>
 </section>
