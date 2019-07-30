@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {AssetsService } from '../services/assets.service';
 import {Router} from '@angular/router';
 
-interface RaspData{
-  peso: number;
-  eco: number;
-}
+//interface RaspData{
+  //peso: number;
+  //eco: number;
+//}
 
 
 @Component({
@@ -16,18 +16,17 @@ interface RaspData{
 export class HomeComponent implements OnInit {
   
   
-  data: RaspData;
+  data: any;
   
   constructor(private router: Router, private assetsService: AssetsService) { }
   
   
-
   ngOnInit() {
   }
 
   start(){
    this.assetsService.getWeight().subscribe(
-   (response: RaspData) => {
+   (response: any) => {
      this.data = response;
      //console.log(response)
      }
