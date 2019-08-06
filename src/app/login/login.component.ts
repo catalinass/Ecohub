@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  //login is going to call the API (initialize)
   login() {
    
     this.router.navigate(['/home']);

@@ -13,8 +13,8 @@
             <div class="column">
                 <div class="columns is-centered">
                     <div class="column is-8 user-box">
-                        <!-- <span class="user-label">Usuario:</span> -->
                         <mat-form-field>
+                             <!-- Sign In/Log In form -->
                             <input matInput placeholder="Cédula">
                             <mat-hint>Poné tu número de cédula</mat-hint>
                         </mat-form-field>
@@ -91,12 +91,13 @@
                             <span class="logo-test">EcoHub</span>
                         </div>
         </div>
+         <!-- when the user click on "regresar" button is go back to the login page -->
         <div class="columns is-centered" *ngIf="isNewMember">
             <div class="column registerAccount is-7 has-text-centered">
                 <button mat-raised-button color="accent" (click)="goBack()"> Regresar
                 </button>
                 <button mat-raised-button color="primary" (click)="register()"
-                    [disabled]="(nameControl.invalid || lastNameControl.invalid || emailControl.invalid || idControl.invalid || usernameControl.invalid || passwordControl.invalid || confPassControl.invalid || isWriting)">
+                    [disabled]="(nameControl.invalid || lastNameControl.invalid || emailControl.invalid || idControl.invalid || isWriting)">
                     Registrarse
                 </button>
             </div>

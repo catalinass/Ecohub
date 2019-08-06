@@ -11,18 +11,21 @@
       <div class="columns" >
           <div class="column">
               <div class="columns is-centered">
-                
+                 <!-- show the weight-->
                    <h6>El peso es:&nbsp; </h6>  {{ data.peso }} 
                     
             </div>
+            <!-- show ecolones-->
             <div class="columns is-centered">
                  <h6>Los ecolones son:&nbsp; </h6> {{ data.eco }}
             </div>
             
               <div class="columns is-centered" >
                 <div class="column registerAccount is-7 has-text-centered">
+                       <!-- when the user click on "iniciar" is going to show all data--> 
                     <button mat-raised-button color="accent" (click)="start()"> Iniciar
                     </button>
+                      <!-- when the user click on "salir" is go back to the login page --> 
                     <button mat-raised-button color="accent" (click)="close()"> Salir
                     </button>
                     

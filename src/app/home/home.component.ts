@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {AssetsService } from '../services/assets.service';
 import {Router} from '@angular/router';
 
-//interface RaspData{
-  //peso: number;
-  //eco: number;
-//}
 
 
 @Component({
@@ -25,10 +21,10 @@ export class HomeComponent implements OnInit {
   }
 
   start(){
+    //When the user click on "iniciar" is going to call the function get weight (api)
    this.assetsService.getWeight().subscribe(
    (response: any) => {
      this.data = response;
-     //console.log(response)
      }
    )
 
